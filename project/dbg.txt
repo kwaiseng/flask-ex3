@@ -1,0 +1,15 @@
+ {
+    'RequestId': '6F61913FFEE67E15',
+    'HostId': 'AO70ZwltOQyK0GibqGPxT6/ssuu6XfhM4S4tlG/3tJh+IzxUWXu64ETYubxYCaYDbxmCnELrkpI=', 
+    'HTTPStatusCode': 200, 
+    'HTTPHeaders':
+    {
+        'x-amz-id-2': 'AO70ZwltOQyK0GibqGPxT6/ssuu6XfhM4S4tlG/3tJh+IzxUWXu64ETYubxYCaYDbxmCnELrkpI=', 
+        'x-amz-request-id': '6F61913FFEE67E15', 
+        'date': 'Sun, 13 Sep 2020 10:21:02 GMT', 
+        'transfer-encoding': 'chunked', 
+        'server': 'AmazonS3'
+    },
+    'RetryAttempts': 0}, 
+    'TagSet': [{'Key': 'user', 'Value': 'KwaiSeng'}]
+}
