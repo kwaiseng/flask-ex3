@@ -1,1 +1,1 @@
-# flask-ex3
+# flask3-ex-openshift
