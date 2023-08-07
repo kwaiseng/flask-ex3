@@ -11,6 +11,12 @@ from .main import main as app
 from .models import Entry
 from . import db
 
+class aws_s3_url():
+  def __init__(self):
+    self.url = None
+    self.last_modified = None
+
+
 s3 = Blueprint('s3', __name__)
 
 
@@ -47,7 +53,17 @@ def files():
         for KeyValue in Tag:
             if KeyValue["Key"] == "user":
                 if KeyValue["Value"] == current_user.name:
-                        user_obj_list.append(entry)
+
+                        entry_list=aws_s3_url()
+                        entry_list.last_modified = entry.last_modified
+                        entry_list.url = s3_client.generate_presigned_url('get_object',
+                                                    Params={'Bucket': S3_BUCKET,
+                                                            'Key': entry.key},
+                                                    ExpiresIn=900)
+                        
+                        print(f'appending {entry_list.url}, last_modified {entry_list.last_modified} ')
+                        user_obj_list.append(entry_list)
+
 
     return render_template('files.html', my_bucket=my_bucket, files=user_obj_list)
 

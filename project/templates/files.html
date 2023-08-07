@@ -17,19 +17,17 @@
     <hr>
     <table class="table table-striped">
       <tr>
-        <th>Filename</th>
         <th>Last Modified</th>
-        <th>Type</th>
-        <th>Tag</th>
+        <th>Thumbnail</th>
+<!--          <th>Type</th> -->
+<!--          <th>Tag</th> -->
       </tr>
       {% for f in files %}
       <tr>
-        <td>{{ f.key }}</td>
         <td>{{ f.last_modified | datetimeformat }}</td>
-        <td>{{ f.key | file_type }}</td>
-        <td>{{ f.key.Tagging  }}</td>
-        <td><a href=https://{{my_bucket.name}}.s3-ap-southeast-1.amazonaws.com/{{ f.key }}>
-              <img class="img-responsive" src=https://{{my_bucket.name}}.s3-ap-southeast-1.amazonaws.com/{{ f.key }} width="200" height="132">
+
+        <td><a href={{ f.url }}>
+              <img class="img-responsive" src={{ f.url }} width="200" height="132">
             </a>
         </td>
       </tr>
